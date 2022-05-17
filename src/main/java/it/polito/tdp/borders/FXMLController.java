@@ -134,7 +134,7 @@ public class FXMLController {
     	for(Country c : lista) {
     		cmbStati.getItems().add(c.getNome());
     		idMapNomi.put(c.getNome(), c);
-    	}
-    		
+    	}    		
     }
+    
 }

@@ -15,21 +15,21 @@ import org.jgrapht.traverse.GraphIterator;
 import it.polito.tdp.borders.db.BordersDAO;
 
 public class Model {
-
-	private BordersDAO dao=new BordersDAO();
+	
 	private Graph<Country,DefaultEdge> grafo;
+	private BordersDAO dao;
 	private Map<Integer, Country> idMap;
 	
 	public Model() {
 		dao=new BordersDAO();
 		idMap=new HashMap<Integer, Country>();
 		
-		for(Country c : dao.loadAllCountries()) {  //assumo che non cambino nel tempo gli stati
+		for(Country c : dao.loadAllCountries()) {  //assumo che non cambino nel tempo gli statipotrei passare la idMap come parametro e farmela riempire
 			idMap.put(c.getCod(), c);
 		}
 	}
 	
-	public List<Country> loadAllCountries() {
+	public List<Country> loadAllCountries() {  //passacarte
 		return dao.loadAllCountries();
 	}
 
